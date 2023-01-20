@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rumblefishdev/eth-signer-kms.git"
+    "url": "git+https://github.com/play-co/eth-signer-kms.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rumblefishdev/eth-signer-kms/issues"
+    "url": "https://github.com/play-co/eth-signer-kms/issues"
   },
-  "homepage": "https://github.com/rumblefishdev/eth-signer-kms#readme",
+  "homepage": "https://github.com/play-co/eth-signer-kms#readme",
   "dependencies": {
     "@ethersproject/abstract-signer": "^5.5.4",
     "@ethersproject/bytes": "^5.5.4",
