@@ -1,5 +1,5 @@
 {
-  "name": "@rumblefishdev/eth-signer-kms",
+  "name": "@play-co/eth-signer-kms",
   "version": "2.3.0",
   "description": "Sign ethereum transaction/messages using KMS service from AWS",
   "main": "dist/index.js",
