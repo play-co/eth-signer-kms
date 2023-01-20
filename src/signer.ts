@@ -5,7 +5,6 @@ import { _TypedDataEncoder } from '@ethersproject/hash'
 
 import { createSignature } from './eth'
 import { getEthAddressFromKMS } from './kms'
-import { hashPersonalMessage } from 'ethereumjs-util'
 import {
   TypedDataDomain,
   TypedDataField,
@@ -35,17 +34,17 @@ export class KMSSigner extends Signer implements TypedDataSigner {
     return this.address
   }
 
-  async signMessage(message: utils.Bytes | string): Promise<string> {
-    if (typeof message === 'string') {
-      message = utils.toUtf8Bytes(message)
-    }
-    const messageBuffer = Buffer.from(utils.hexlify(message).slice(2), 'hex')
-    const hash = hashPersonalMessage(messageBuffer).toString('hex')
+  async signMessage(message: string): Promise<string> {
+    // if (typeof message === 'string') {
+    //   message = utils.toUtf8Bytes(message)
+    // }
+    // const messageBuffer = Buffer.from(utils.hexlify(message).slice(2), 'hex')
+    // const hash = hashPersonalMessage(messageBuffer).toString('hex')
 
     const sig = await createSignature({
       kmsInstance: this.kmsInstance,
       keyId: this.keyId,
-      message: `0x${hash}`,
+      message: message,
       address: await this.getAddress()
     })
 
